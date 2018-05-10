@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  clr21example:
+    image: clr21example
+    build:
+      context: .
+      dockerfile: CLR21Example/Dockerfile
