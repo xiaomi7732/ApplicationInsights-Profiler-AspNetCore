@@ -22,6 +22,7 @@ namespace CLR21Example
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddServiceProfiler(TimeSpan.FromMinutes(2), TimeSpan.FromMinutes(30), TimeSpan.FromSeconds(30));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
