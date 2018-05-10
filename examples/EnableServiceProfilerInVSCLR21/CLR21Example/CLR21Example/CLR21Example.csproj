@@ -5,6 +5,7 @@
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <ApplicationInsightsResourceId>/subscriptions/e8ea4e2c-5bc5-46a9-ac97-3dc3462bab38/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CLR21Example</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/e8ea4e2c-5bc5-46a9-ac97-3dc3462bab38/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/CLR21Example</ApplicationInsightsAnnotationResourceId>
+    <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
   </PropertyGroup>
 
   <ItemGroup>
