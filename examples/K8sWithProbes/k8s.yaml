@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-profiler-probes-deployment
+  namespace: ai-k8s-demo
+  labels:
+    app: ai-profiler-api-probe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-profiler-api-probe
+  template:
+    metadata:
+      labels:
+        app: ai-profiler-api-probe
+    spec:
+      containers:
+      - name: ai-profiler-api-probe-container
+        image: dockeraccount/ai-profiler-k8s-probes:1.0.0
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 156m
+            memory: 320Mi
+          requests:
+            cpu: 125m
+            memory: 256Mi
+        livenessProbe:
+          httpGet:
+            path: /health/live
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health/ready
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
